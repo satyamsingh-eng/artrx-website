@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>ArtRX — Bringing Comfort &amp; Creativity Through Art</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #1A365D;
+  --sage: #2F7A5C;
+  --sage-light: #EBF7F2;
+  --beige: #FAF6F0;
+  --beige-dark: #F0EAE1;
+  --ink: #1F2430;
+  --muted: #5A6272;
+  --white: #FFFFFF;
+  --card-shadow: 0 10px 30px rgba(26, 54, 93, 0.05);
+  --font: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --heading: 'Outfit', sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font);
+  background-color: var(--beige);
+  color: var(--ink);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* NAVBAR */
+nav {
+  position: sticky;
+  top: 0;
+  background: rgba(250, 246, 240, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(26, 54, 93, 0.08);
+  z-index: 1000;
+  padding: 18px 0;
+}
+.nav-container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+.brand-icon {
+  width: 40px;
+  height: 40px;
+  background: var(--navy);
+  color: var(--beige);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--heading);
+  font-weight: 800;
+  font-size: 20px;
+}
+.brand-name {
+  font-family: var(--heading);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: -0.02em;
+}
+.nav-links {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  list-style: none;
+}
+.nav-links a {
+  text-decoration: none;
+  color: var(--ink);
+  font-weight: 500;
+  font-size: 15px;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--sage); }
+.btn-primary {
+  background: var(--navy);
+  color: var(--white);
+  padding: 12px 24px;
+  border-radius: 100px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  transition: transform 0.2s, background 0.2s;
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+}
+.btn-primary:hover {
+  background: var(--sage);
+  transform: translateY(-2px);
+}
+.btn-secondary {
+  background: transparent;
+  color: var(--navy);
+  border: 1.5px solid var(--navy);
+  padding: 11px 22px;
+  border-radius: 100px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.2s;
+  display: inline-block;
+}
+.btn-secondary:hover {
+  background: var(--navy);
+  color: var(--white);
+}
+
+/* HERO SECTION */
+.hero {
+  padding: 96px 24px 80px;
+  max-width: 1140px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 60px;
+  align-items: center;
+}
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--sage-light);
+  color: var(--sage);
+  padding: 6px 16px;
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+.hero h1 {
+  font-family: var(--heading);
+  font-size: clamp(38px, 4.5vw, 56px);
+  font-weight: 800;
+  line-height: 1.12;
+  color: var(--navy);
+  margin-bottom: 20px;
+  letter-spacing: -0.02em;
+}
+.hero p {
+  font-size: 18px;
+  color: var(--muted);
+  margin-bottom: 36px;
+  max-width: 520px;
+}
+.hero-btns {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.hero-card {
+  background: var(--white);
+  padding: 36px;
+  border-radius: 24px;
+  box-shadow: var(--card-shadow);
+  border: 1px solid rgba(26, 54, 93, 0.06);
+  position: relative;
+}
+.hero-card-quote {
+  font-size: 17px;
+  color: var(--ink);
+  font-style: italic;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+.hero-card-author {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.author-avatar {
+  width: 48px;
+  height: 48px;
+  background: var(--sage-light);
+  color: var(--sage);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 18px;
+}
+.author-info h4 { font-size: 15px; font-weight: 700; color: var(--navy); }
+.author-info p { font-size: 13px; color: var(--muted); margin: 0; }
+
+/* SECTIONS COMMON */
+section { padding: 96px 24px; }
+.container { max-width: 1140px; margin: 0 auto; }
+.section-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 64px;
+}
+.section-header h2 {
+  font-family: var(--heading);
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 16px;
+  letter-spacing: -0.01em;
+}
+.section-header p {
+  font-size: 17px;
+  color: var(--muted);
+}
+
+/* PILLARS */
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+.pillar-card {
+  background: var(--white);
+  padding: 40px;
+  border-radius: 20px;
+  border: 1px solid rgba(26, 54, 93, 0.06);
+  box-shadow: var(--card-shadow);
+}
+.pillar-icon {
+  width: 56px;
+  height: 56px;
+  background: var(--beige);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  margin-bottom: 24px;
+  color: var(--navy);
+}
+.pillar-card h3 {
+  font-family: var(--heading);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 12px;
+}
+.pillar-card p {
+  color: var(--muted);
+  font-size: 15.5px;
+  line-height: 1.65;
+}
+
+/* GALLERY WITH SEGMENT TABS */
+.gallery-bg { background: var(--white); }
+.tabs-container {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 48px;
+}
+.tab-btn {
+  padding: 12px 28px;
+  border-radius: 100px;
+  border: 1.5px solid var(--beige-dark);
+  background: var(--beige);
+  color: var(--ink);
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.tab-btn.active, .tab-btn:hover {
+  background: var(--navy);
+  color: var(--white);
+  border-color: var(--navy);
+}
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.gallery-item {
+  background: var(--beige);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(26, 54, 93, 0.06);
+  transition: transform 0.2s;
+}
+.gallery-item:hover { transform: translateY(-4px); }
+.gallery-img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  background: #e2e8f0;
+}
+.gallery-info {
+  padding: 20px;
+}
+.gallery-info h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 6px;
+}
+.gallery-info p {
+  font-size: 13.5px;
+  color: var(--muted);
+}
+
+/* ABOUT FOUNDER */
+.about-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 60px;
+  align-items: center;
+}
+.about-card {
+  background: var(--white);
+  padding: 40px;
+  border-radius: 24px;
+  border: 1px solid rgba(26, 54, 93, 0.06);
+  box-shadow: var(--card-shadow);
+}
+.about-content h2 {
+  font-family: var(--heading);
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 20px;
+}
+.about-content p {
+  font-size: 16.5px;
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+.credentials-list {
+  list-style: none;
+  margin-top: 24px;
+}
+.credentials-list li {
+  font-size: 14.5px;
+  color: var(--ink);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.credentials-list li::before {
+  content: '✦';
+  color: var(--sage);
+  font-weight: 700;
+}
+
+/* CONTACT SECTION */
+.contact-bg { background: var(--white); }
+.contact-box {
+  max-width: 720px;
+  margin: 0 auto;
+  background: var(--beige);
+  padding: 48px;
+  border-radius: 24px;
+  border: 1px solid rgba(26, 54, 93, 0.08);
+}
+.form-group { margin-bottom: 20px; }
+.form-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+.form-control, .form-select {
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: 12px;
+  border: 1px solid rgba(26, 54, 93, 0.15);
+  background: var(--white);
+  font-family: var(--font);
+  font-size: 15px;
+  color: var(--ink);
+  outline: none;
+}
+.form-control:focus, .form-select:focus {
+  border-color: var(--sage);
+}
+textarea.form-control { resize: vertical; height: 120px; }
+
+/* FOOTER */
+footer {
+  background: var(--navy);
+  color: var(--white);
+  padding: 64px 24px 32px;
+}
+.footer-container {
+  max-width: 1140px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.footer-brand {
+  font-family: var(--heading);
+  font-size: 24px;
+  font-weight: 700;
+}
+.footer-copy {
+  text-align: center;
+  padding-top: 32px;
+  font-size: 13.5px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+@media (max-width: 900px) {
+  .hero, .pillars-grid, .about-grid, .gallery-grid { grid-template-columns: 1fr; }
+  .nav-links { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="nav-container">
+    <a href="#" class="brand">
+      <div class="brand-icon">A</div>
+      <span class="brand-name">ArtRX</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">Our Story</a></li>
+      <li><a href="#pillars">What We Do</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Get Involved</a></li>
+    </ul>
+    <a href="#contact" class="btn-primary">Contact Us</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div>
+    <span class="badge">✦ Healing Through Creativity</span>
+    <h1>Comfort &amp; Joy Through the Power of Drawing</h1>
+    <p>ArtRX provides illustration pads and creative programs to hospitalized children and senior citizens in nursing homes throughout New York.</p>
+    <div class="hero-btns">
+      <a href="#gallery" class="btn-primary">Explore Gallery</a>
+      <a href="#contact" class="btn-secondary">Volunteer With Us</a>
+    </div>
+  </div>
+  <div class="hero-card">
+    <p class="hero-card-quote">"ArtRX brings an innovative and compassionate approach to mental health support. Their workshops help patients reduce anxiety and express emotions through creative drawing."</p>
+    <div class="hero-card-author">
+      <div class="author-avatar">DV</div>
+      <div class="author-info">
+        <h4>Dr. Venugopal</h4>
+        <p>Gastroenterologist, Stars Surgical Suites</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- PILLARS -->
+<section id="pillars">
+  <div class="container">
+    <div class="section-header">
+      <h2>How Drawing Brings Comfort</h2>
+      <p>You don't need to be a great artist to feel the healing impact of art. When words fail during tough times, drawing gives everyone a voice.</p>
+    </div>
+    <div class="pillars-grid">
+      <div class="pillar-card">
+        <div class="pillar-icon">🧸</div>
+        <h3>Pediatric Hospital Care</h3>
+        <p>Providing guided illustration pads to children facing medical stays, giving them a fun distraction, a safe outlet for emotions, and a small moment of happiness.</p>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-icon">🎨</div>
+        <h3>Senior Care Workshops</h3>
+        <p>Conducting interactive, relaxing art sessions for senior citizens in nursing homes to promote relaxation, combat loneliness, and stimulate memory through creation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" class="gallery-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2>ArtRX Gallery</h2>
+      <p>Explore our guided illustration prompt pads and the inspiring original drawings created by pediatric patients and senior residents.</p>
+    </div>
+
+    <!-- SEGMENTATION TABS -->
+    <div class="tabs-container">
+      <button class="tab-btn active" onclick="filterGallery('all')">All Works</button>
+      <button class="tab-btn" onclick="filterGallery('template')">Guided Templates</button>
+      <button class="tab-btn" onclick="filterGallery('artwork')">Patient Artwork</button>
+    </div>
+
+    <div class="gallery-grid" id="gallery-grid">
+      
+      <!-- TEMPLATES -->
+      <div class="gallery-item template">
+        <img src="assets/images/gallery_img_0_rs=w:800.jpg" alt="ArtRX Sketchpad Template" class="gallery-img"/>
+        <div class="gallery-info">
+          <h4>"Draw Your Family" Pad</h4>
+          <p>Guided Drawing Template</p>
+        </div>
+      </div>
+
+      <div class="gallery-item template">
+        <img src="assets/images/gallery_img_1_rs=w:800.jpg" alt="ArtRX Sketchpad Template" class="gallery-img"/>
+        <div class="gallery-info">
+          <h4>"Favorite Food" Prompt Pad</h4>
+          <p>Guided Drawing Template</p>
+        </div>
+      </div>
+
+      <div class="gallery-item template">
+        <img src="assets/images/gallery_img_2_rs=w:800.jpg" alt="ArtRX Sketchpad Template" class="gallery-img"/>
+        <div class="gallery-info">
+          <h4>"You &amp; A Friend" Drawing Pad</h4>
+          <p>Guided Drawing Template</p>
+        </div>
+      </div>
+
+      <!-- REAL PATIENT ARTWORK -->
+      <div class="gallery-item artwork">
+        <img src="assets/images/gallery_img_3_rs=w:800.jpg" alt="Patient Artwork" class="gallery-img"/>
+        <div class="gallery-info">
+          <h4>Bedside Flower Drawing</h4>
+          <p>Completed Patient Work</p>
+        </div>
+      </div>
+
+      <div class="gallery-item artwork">
+        <img src="assets/images/gallery_img_4_rs=w:800.jpg" alt="Patient Artwork" class="gallery-img"/>
+        <div class="gallery-info">
+          <h4>Colorful Family Portrait</h4>
+          <p>Completed Patient Work</p>
+        </div>
+      </div>
+
+      <div class="gallery-item artwork">
+        <img src="assets/images/gallery_img_5_rs=w:800.jpg" alt="Patient Artwork" class="gallery-img"/>
+        <div class="gallery-info">
+          <h4>Senior Workshop Sketch</h4>
+          <p>Completed Senior Care Artwork</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT FOUNDER -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-card">
+        <h3>Thanvi Suvva</h3>
+        <p style="color: var(--sage); font-weight: 600; margin-bottom: 16px;">Founder &amp; Youth Director</p>
+        <p style="font-size: 15px; color: var(--muted);">Jericho High School Junior passionate about the intersection of scientific research, medicine, and therapeutic art.</p>
+      </div>
+      <div class="about-content">
+        <h2>About the Founder</h2>
+        <p>Thanvi Suvva founded ArtRX to give hospitalized children and nursing home residents a creative voice when words fail during difficult medical circumstances.</p>
+        <p>Combining her deep dedication to community service with medical research, Thanvi leads outreach across hospitals and senior care facilities throughout New York.</p>
+        <ul class="credentials-list">
+          <li>Cancer Research Scholar at Weill Cornell Medical Center</li>
+          <li>Limb Regeneration Research at Harvard University (Birol Lab)</li>
+          <li>Scholastic Art &amp; Writing Gold Key Award Winner</li>
+          <li>Jericho High School Boys' Badminton Team Manager</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT FORM -->
+<section id="contact" class="contact-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2>Connect with ArtRX</h2>
+      <p>Whether you'd like to ask a general question or volunteer to help bring art kits to hospitals, we'd love to hear from you!</p>
+    </div>
+    <div class="contact-box">
+      <form onsubmit="handleContactSubmit(event)">
+        <div class="form-group">
+          <label>Inquiry Type</label>
+          <select class="form-select" id="inquiryType">
+            <option value="general">General Inquiry</option>
+            <option value="volunteer">Volunteer Interest</option>
+            <option value="facility">Hospital / Senior Facility Request</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" class="form-control" placeholder="Jane Doe" required/>
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" class="form-control" placeholder="jane@example.com" required/>
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea class="form-control" placeholder="Tell us how we can help or join..." required></textarea>
+        </div>
+        <button type="submit" class="btn-primary" style="width: 100%; font-size: 16px; padding: 14px;">Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-container">
+    <div class="footer-brand">ArtRX</div>
+    <p style="font-size: 14px; opacity: 0.8;">Bringing comfort, healing, and joy through art.</p>
+  </div>
+  <div class="footer-copy">
+    &copy; 2026 ArtRX. All Rights Reserved. Created in partnership with C3A Labs.
+  </div>
+</footer>
+
+<script>
+function filterGallery(category) {
+  const items = document.querySelectorAll('.gallery-item');
+  const buttons = document.querySelectorAll('.tab-btn');
+  
+  buttons.forEach(btn => btn.classList.remove('active'));
+  event.target.classList.add('active');
+
+  items.forEach(item => {
+    if (category === 'all' || item.classList.contains(category)) {
+      item.style.display = 'block';
+    } else {
+      item.style.display = 'none';
+    }
+  });
+}
+
+function handleContactSubmit(e) {
+  e.preventDefault();
+  alert('Thank you for reaching out to ArtRX! We will get back to you shortly.');
+}
+</script>
+
+</body>
+</html>
