@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>ArtRX — Heart-Centered Digital Strategy &amp; Redesign Report</title>
+<title>ArtRX — Website Redesign &amp; Digital Transformation Proposal</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#ffffff;--off:#FAF6F0;--off2:#F2EFE9;
@@ -15,7 +15,6 @@
   --sage:#2F7A5C;--sage-faint:#EBF7F2;
   --coral:#FF6B6B;--coral-faint:#FFF0F0;
   --gold:#C8823A;--gold-faint:#FDF6EE;
-  --blk:#0A0B10;
   --font:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
   --heading:'Outfit',sans-serif;
   --mono:'SF Mono','JetBrains Mono','Menlo',monospace;
@@ -41,21 +40,21 @@ header.top .meta{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;paddi
 header.top .m-label{font-size:10.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--subtle);margin-bottom:8px}
 header.top .m-value{font-size:15px;font-weight:600;color:var(--navy);letter-spacing:-.005em}
 
-/* EMOTIONAL HEART BOX */
-.heart-box{border:2px solid var(--sage);border-radius:24px;padding:56px 48px;margin-bottom:88px;background:var(--sage-faint)}
-.heart-box .h-badge{display:inline-flex;align-items:center;gap:10px;font-size:10.5px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--sage);margin-bottom:20px}
-.heart-box .h-badge .tag{background:var(--sage);color:#fff;font-size:10px;font-weight:800;letter-spacing:.12em;padding:4px 12px;border-radius:100px}
-.heart-box h2{font-family:var(--heading);font-size:32px;font-weight:700;letter-spacing:-.015em;color:var(--navy);margin:0 0 18px;max-width:860px;line-height:1.2}
-.heart-box p{font-size:17px;color:var(--ink-soft);line-height:1.7;max-width:840px;margin:0 0 24px}
-.quote-highlight{background:var(--navy);color:#fff;border-radius:16px;padding:32px 36px;font-size:16px;line-height:1.75;margin-top:28px}
-.quote-highlight strong{color:#93C5FD;font-weight:600}
+/* PROPOSAL BANNER */
+.proposal-box{border:2px solid var(--navy);border-radius:24px;padding:56px 48px;margin-bottom:88px;background:var(--navy-faint)}
+.proposal-box .p-badge{display:inline-flex;align-items:center;gap:10px;font-size:10.5px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--navy);margin-bottom:20px}
+.proposal-box .p-badge .tag{background:var(--navy);color:#fff;font-size:10px;font-weight:800;letter-spacing:.12em;padding:4px 12px;border-radius:100px}
+.proposal-box h2{font-family:var(--heading);font-size:32px;font-weight:700;letter-spacing:-.015em;color:var(--navy);margin:0 0 18px;max-width:860px;line-height:1.2}
+.proposal-box p{font-size:17px;color:var(--ink-soft);line-height:1.7;max-width:840px;margin:0 0 24px}
+.blackfill{background:var(--navy);color:#fff;border-radius:16px;padding:32px 36px;font-size:16px;line-height:1.75;margin-top:28px}
+.blackfill strong{color:#93C5FD;font-weight:600}
 
 /* SECTIONS */
 section.part{margin-bottom:96px}
 section.part .sec-num{display:inline-flex;align-items:center;gap:12px;font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--sage);margin-bottom:20px}
 section.part .sec-num::before{content:'';display:inline-block;width:28px;height:2px;background:var(--sage)}
 section.part h2{font-family:var(--heading);font-size:34px;font-weight:700;letter-spacing:-.015em;line-height:1.15;color:var(--navy);margin:0 0 36px;max-width:860px}
-section.part h3{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--navy);margin:48px 0 20px}
+section.part h3{font-family:var(--heading);font-size:22px;font-weight:700;color:var(--navy);margin:40px 0 18px}
 section.part h3:first-of-type{margin-top:0}
 section.part p{font-size:16.5px;color:var(--ink-soft);line-height:1.75;margin:0 0 20px;max-width:840px}
 
@@ -84,15 +83,16 @@ thead th{text-align:left;padding:16px 20px;font-size:10.5px;font-weight:700;lett
 tbody td{padding:16px 20px;border-bottom:1px solid var(--line);color:var(--ink-soft);vertical-align:top;line-height:1.55}
 tbody tr:last-child td{border-bottom:none}
 
-/* JOURNEYS */
-.journey-list{border:1px solid var(--line);border-radius:16px;overflow:hidden;margin:32px 0}
-.journey-row{display:grid;grid-template-columns:140px 1fr;gap:20px;padding:24px 28px;border-top:1px solid var(--line);align-items:baseline;background:var(--bg)}
-.journey-row:first-child{border-top:none}
-.journey-row .j-label{font-family:var(--mono);font-size:12px;font-weight:700;color:var(--navy);letter-spacing:.02em}
-.journey-row .j-text{font-size:15px;color:var(--ink-soft);line-height:1.6}
-.journey-row .j-text strong{color:var(--navy);font-weight:600}
+/* BLUEPRINT CARDS */
+.bp-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin:32px 0}
+.bp-card{background:#fff;border:1px solid var(--line);border-top:4px solid var(--sage);border-radius:16px;padding:28px}
+.bp-card.navy-top{border-top-color:var(--navy)}
+.bp-card h4{font-family:var(--heading);font-size:20px;font-weight:700;color:var(--navy);margin:0 0 12px}
+.bp-card ul{margin:0;padding:0;list-style:none}
+.bp-card li{font-size:14.5px;color:var(--ink-soft);margin-bottom:8px;padding-left:20px;position:relative}
+.bp-card li::before{content:'✦';position:absolute;left:0;color:var(--sage);font-weight:700}
 
-/* COLOR PALETTE */
+/* PALETTE VISUAL */
 .palette{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:24px 0}
 .chip{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff}
 .chip .color{height:80px}
@@ -110,7 +110,7 @@ tbody tr:last-child td{border-bottom:none}
 .phase-body{padding:24px 28px;border-top:1px solid var(--line)}
 .phase-body ul{margin:0;padding:0;list-style:none}
 .phase-body li{font-size:15px;color:var(--ink-soft);line-height:1.65;padding-left:24px;margin-bottom:10px;position:relative}
-.phase-body li::before{content:'✦';position:absolute;left:0;top:1px;font-weight:700;color:var(--sage);font-size:12px}
+.phase-body li::before{content:'✓';position:absolute;left:0;top:1px;font-weight:700;color:var(--sage);font-size:12px}
 
 /* FOOTER */
 footer.doc-foot{margin-top:112px;padding:32px 40px;border:1px solid var(--line);border-radius:16px;background:var(--off);font-size:13.5px;color:var(--muted);line-height:1.7;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
@@ -120,9 +120,8 @@ footer.doc-foot strong{color:var(--navy)}
   .shell{padding:48px 20px 80px}
   header.top h1{font-size:34px}
   header.top .meta{grid-template-columns:1fr 1fr}
-  .card-grid,.player-grid,.palette{grid-template-columns:1fr}
+  .card-grid,.player-grid,.bp-grid,.palette{grid-template-columns:1fr}
   .phase-head{grid-template-columns:1fr;gap:8px}
-  .journey-row{grid-template-columns:1fr;gap:6px}
 }
 </style>
 </head>
@@ -131,9 +130,9 @@ footer.doc-foot strong{color:var(--navy)}
 
   <!-- HEADER -->
   <header class="top">
-    <div class="eyebrow-bar">ArtRX &middot; Heart-Centered Digital Strategy</div>
-    <h1>ArtRX —<br/><span class="acc">Bringing Comfort &amp; Healing Through Drawing</span></h1>
-    <p class="deck">A thoughtful, empathetic digital strategy created specifically for Thanvi Suvva and Dr. Sushma Venugopal — celebrating ArtRX's compassionate mission and mapping its transition to a world-class platform.</p>
+    <div class="eyebrow-bar">C3A Labs &middot; Project Proposal &amp; Strategy Blueprint</div>
+    <h1>ArtRX Digital Platform —<br/><span class="acc">Strategic Proposal &amp; Website Redesign</span></h1>
+    <p class="deck">A comprehensive project proposal prepared for Thanvi Suvva and Dr. Sushma Venugopal — integrating our discovery call insights, national market research, and our proposed technical solution.</p>
     <div class="meta">
       <div><div class="m-label">Prepared For</div><div class="m-value">Thanvi Suvva &amp; Dr. Sushma Venugopal</div></div>
       <div><div class="m-label">Target Website</div><div class="m-value">artrx.co</div></div>
@@ -142,56 +141,55 @@ footer.doc-foot strong{color:var(--navy)}
     </div>
   </header>
 
-  <!-- HEART & PSYCHOLOGY BOX -->
-  <div class="heart-box">
-    <div class="h-badge"><span class="tag">THE HEART OF ARTRX</span> Understanding Thanvi's Vision</div>
-    <h2>Giving a gentle voice to hospitalized children and lonely senior citizens when words fail.</h2>
-    <p>ArtRX is not about creating "masterpieces" or selling art services. It is rooted in a quiet, profound realization: <strong>When someone is going through a scary medical stay or feeling isolated in a nursing home, drawing offers an emotional sanctuary.</strong></p>
-    <p>By providing simple, guided illustration pads (*"Draw Your Family"*, *"What Is Your Favorite Food?"*), Thanvi gives patients a fun distraction, a safe outlet for complex emotions, and a small moment of genuine joy during a difficult time.</p>
+  <!-- PROPOSAL SUMMARY BANNER -->
+  <div class="proposal-box">
+    <div class="p-badge"><span class="tag">PROJECT PROPOSAL</span> C3A Labs Partnership</div>
+    <h2>Building a world-class digital home for ArtRX — pro-bono, high-impact, and built to scale.</h2>
+    <p>Following our discovery meeting, C3A Labs is honored to present this formal proposal to design, develop, and deploy the new <strong>ArtRX</strong> website. Our mission is to transform Thanvi's inspiring youth initiative into an accessible, beautiful, and high-converting digital platform before the August 10 domain renewal date.</p>
     
-    <div class="quote-highlight">
-      "You don't need to be a great artist to feel the healing power of art. It’s not about making a masterpiece; it’s about the peace, comfort, and quiet happiness you feel while creating it."
+    <div class="blackfill">
+      <strong>Pro-Bono Commitment:</strong> C3A Labs will handle all initial website design, custom coding, image optimization, and technical setup at zero cost. We will migrate ArtRX away from expensive GoDaddy monthly website builder fees while keeping the domain registered on GoDaddy.
     </div>
   </div>
 
-  <!-- CORE ALIGNED DESIGN DECISIONS -->
+  <!-- SECTION 1: WHAT WE DISCUSSED -->
   <section class="part">
-    <span class="sec-num">Client Alignment</span>
-    <h2>Reflecting Thanvi's Chosen Preferences</h2>
-    <p>During our discovery call, Thanvi and Dr. Sushma shared their vision for the website. Every design decision in our new architecture directly reflects their exact preferences:</p>
+    <span class="sec-num">01 &middot; What We Discussed</span>
+    <h2>Your Vision &amp; Key Requirements</h2>
+    <p>In our discovery call on August 4, Thanvi and Dr. Sushma outlined the core goals, emotional purpose, and visual identity for ArtRX. Here is what we aligned on:</p>
 
     <div class="card-grid">
       <div class="feature-card">
-        <div class="f-label">PALETTE CHOICE</div>
+        <div class="f-label">CORE MISSION</div>
+        <h4>Comfort &amp; Emotional Relief Through Drawing</h4>
+        <p>ArtRX provides guided illustration prompt pads to children in hospital beds and conducts workshops for seniors in nursing homes to alleviate depression, loneliness, and anxiety.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="f-label">VISUAL IDENTITY</div>
         <h4>Beige, Sage Green &amp; Healing Navy</h4>
-        <p>A warm, non-clinical palette (Soft Beige <code>#FAF6F0</code> background, Sage Green <code>#2F7A5C</code> accents, and Healing Navy <code>#1A365D</code> text) that feels peaceful, welcoming, and restorative.</p>
+        <p>Thanvi selected a calm, non-clinical color scheme: Soft Beige (<code>#FAF6F0</code>) background, Healing Sage Green (<code>#2F7A5C</code>) accents, and Healing Navy (<code>#1A365D</code>) typography.</p>
       </div>
 
       <div class="feature-card">
-        <div class="f-label">GALLERY STRUCTURE</div>
-        <h4>Templates vs. Patient Artwork Tabs</h4>
-        <p>A respectful gallery split into 2 clear categories: <strong>Guided Prompt Templates</strong> (Thanvi's custom drawing pads) and <strong>Patient Artwork</strong> (drawings created by children and seniors).</p>
-      </div>
-
-      <div class="feature-card">
-        <div class="f-label">COMMUNITY PHILOSOPHY</div>
-        <h4>100% Non-Commercial Focus</h4>
-        <p>Zero aggressive donation popups or fee-for-service therapy sales copy. The platform is designed purely as an inspiring community service showcase.</p>
+        <div class="f-label">GALLERY LAYOUT</div>
+        <h4>Segmented Templates vs. Patient Work</h4>
+        <p>The gallery will feature 2 clear tabs: <strong>Guided Prompt Templates</strong> (Thanvi's custom drawing pads) and <strong>Real Patient Artwork</strong> (drawings created by kids and seniors).</p>
       </div>
 
       <div class="feature-card">
         <div class="f-label">CONTACT INTAKE</div>
-        <h4>Simple Dual Form</h4>
-        <p>Streamlined contact options allowing visitors to choose between <strong>General Inquiries</strong>, <strong>Student Volunteer Interest</strong>, or <strong>Hospital/Senior Facility Requests</strong>.</p>
+        <h4>Dual Form Strategy</h4>
+        <p>A simple form selector allowing visitors to reach out for <strong>General Inquiries</strong>, <strong>Student Volunteer Opportunities</strong>, or <strong>Hospital &amp; Senior Facility Requests</strong>.</p>
       </div>
     </div>
   </section>
 
-  <!-- BENCHMARK SECTION: 12 PLAYERS -->
+  <!-- SECTION 2: WHAT WE FOUND IN RESEARCH -->
   <section class="part">
-    <span class="sec-num">Peer Benchmarks</span>
-    <h2>12 National Gold Standards (Verified Active Links)</h2>
-    <p>To help Thanvi explore how other student-led and healthcare art non-profits present their work, we verified and analyzed 12 leading peer initiatives across the country:</p>
+    <span class="sec-num">02 &middot; What We Found in Research</span>
+    <h2>12 Peer Benchmarks &amp; National Gold Standards</h2>
+    <p>To ensure ArtRX's new website matches the top student-led and healthcare art non-profits across the country, we analyzed 12 leading peer initiatives with verified active websites:</p>
 
     <div class="player-grid">
       
@@ -199,16 +197,16 @@ footer.doc-foot strong{color:var(--navy)}
         <span class="p-tag">Teen-Founded Hospital Care</span>
         <h4>1. Kayla Cares 4 Kids</h4>
         <a href="https://www.kaylacares4kids.org" target="_blank" class="p-url">kaylacares4kids.org</a>
-        <div class="p-desc">Founded by 11-year-old Kayla, delivering 55,000+ art kits, games, and books to pediatric hospital wards and Ronald McDonald Houses nationwide.</div>
-        <div class="p-takeaway"><strong>Inspiration for Thanvi:</strong> Look at their hospital recipient directory and Junior Ambassador drive guides.</div>
+        <div class="p-desc">Founded by 11-year-old Kayla, delivering 55,000+ art kits and educational items to pediatric hospital wards and Ronald McDonald Houses nationwide.</div>
+        <div class="p-takeaway"><strong>Key Finding:</strong> Hospital recipient directories and Junior Ambassador drive toolkits build instant credibility.</div>
       </div>
 
       <div class="player-card">
         <span class="p-tag">Global Student Network</span>
         <h4>2. Art Pass</h4>
         <a href="https://www.artpass.org" target="_blank" class="p-url">artpass.org</a>
-        <div class="p-desc">A global high school student initiative spanning 24 chapters across 4 continents that distributes creative prompt cards and art kits to young patients.</div>
-        <div class="p-takeaway"><strong>Inspiration for Thanvi:</strong> Excellent inspiration for high school student chapter starter kits.</div>
+        <div class="p-desc">A global high school student network spanning 24 chapters across 4 continents that distributes creative prompt cards and art kits to young patients.</div>
+        <div class="p-takeaway"><strong>Key Finding:</strong> Turnkey "Start an High School Chapter" PDF toolkits allow student initiatives to scale rapidly.</div>
       </div>
 
       <div class="player-card">
@@ -216,7 +214,7 @@ footer.doc-foot strong{color:var(--navy)}
         <h4>3. Cards for Hospitalized Kids</h4>
         <a href="https://www.cardsforhospitalizedkids.com" target="_blank" class="p-url">cardsforhospitalizedkids.com</a>
         <div class="p-desc">Founded by 16-year-old Jen Rubino; reached 500,000+ hospitalized children with uplifting handmade art and cards.</div>
-        <div class="p-takeaway"><strong>Inspiration for Thanvi:</strong> Shows how simple artwork and drawing events create massive emotional impact.</div>
+        <div class="p-takeaway"><strong>Key Finding:</strong> Simple artwork and community drawing events create massive emotional resonance.</div>
       </div>
 
       <div class="player-card">
@@ -224,7 +222,7 @@ footer.doc-foot strong{color:var(--navy)}
         <h4>4. Project Sunshine</h4>
         <a href="https://www.projectsunshine.org" target="_blank" class="p-url">projectsunshine.org</a>
         <div class="p-desc">Delivers creative arts, play, and mental wellness kits directly to pediatric hospital wards across US medical centers.</div>
-        <div class="p-takeaway"><strong>Inspiration for Thanvi:</strong> Great example of Child Life specialist partnerships and kit safety guidelines.</div>
+        <div class="p-takeaway"><strong>Key Finding:</strong> Dedicated Child Life specialist request portals streamline hospital distribution.</div>
       </div>
 
       <div class="player-card">
@@ -232,7 +230,7 @@ footer.doc-foot strong{color:var(--navy)}
         <h4>5. Draw Change</h4>
         <a href="https://www.drawchange.org" target="_blank" class="p-url">drawchange.org</a>
         <div class="p-desc">Empowers hospitalized children through art therapy programs and self-expression workshops that foster emotional resilience.</div>
-        <div class="p-takeaway"><strong>Inspiration for Thanvi:</strong> Demonstrates how art therapy lowers stress during medical care.</div>
+        <div class="p-takeaway"><strong>Key Finding:</strong> Clear explanations of the psychological benefits of art therapy build donor trust.</div>
       </div>
 
       <div class="player-card">
@@ -240,7 +238,7 @@ footer.doc-foot strong{color:var(--navy)}
         <h4>6. Love For Our Elders</h4>
         <a href="https://www.loveforourelders.org" target="_blank" class="p-url">loveforourelders.org</a>
         <div class="p-desc">Founded by student Jacob Cramer, mobilizing student volunteers to create handwritten artwork and letters for senior nursing home residents.</div>
-        <div class="p-takeaway"><strong>Inspiration for Thanvi:</strong> Matches Thanvi's senior care mission to combat elderly isolation through art.</div>
+        <div class="p-takeaway"><strong>Key Finding:</strong> Matches Thanvi's senior care mission to combat elderly isolation through art.</div>
       </div>
 
       <div class="player-card">
@@ -248,7 +246,7 @@ footer.doc-foot strong{color:var(--navy)}
         <h4>7. GlamourGals Foundation</h4>
         <a href="https://www.glamourgals.org" target="_blank" class="p-url">glamourgals.org</a>
         <div class="p-desc">Organizes high school student volunteer chapters to visit senior living centers for companionship, conversation, and creative sessions.</div>
-        <div class="p-takeaway"><strong>Inspiration for Thanvi:</strong> Great model for nursing home activity director scheduling portals.</div>
+        <div class="p-takeaway"><strong>Key Finding:</strong> Excellent model for nursing home activity director scheduling portals.</div>
       </div>
 
       <div class="player-card">
@@ -256,7 +254,7 @@ footer.doc-foot strong{color:var(--navy)}
         <h4>8. Art with Heart</h4>
         <a href="https://www.artwithheart.org" target="_blank" class="p-url">artwithheart.org</a>
         <div class="p-desc">Creates therapeutic art journals and expression drawing pads designed to help children express complex feelings during medical stays.</div>
-        <div class="p-takeaway"><strong>Inspiration for Thanvi:</strong> **Best inspiration for Thanvi's illustration prompt pads!**</div>
+        <div class="p-takeaway"><strong>Key Finding:</strong> **Direct benchmark for Thanvi's illustration prompt pads!**</div>
       </div>
 
       <div class="player-card">
@@ -264,7 +262,7 @@ footer.doc-foot strong{color:var(--navy)}
         <h4>9. Free Arts NYC</h4>
         <a href="https://www.freeartsnyc.org" target="_blank" class="p-url">freeartsnyc.org</a>
         <div class="p-desc">A New York non-profit providing creative arts and mentoring programs to children across health centers and community centers in NYC.</div>
-        <div class="p-takeaway"><strong>Inspiration for Thanvi:</strong> Emphasizes local New York community ties.</div>
+        <div class="p-takeaway"><strong>Key Finding:</strong> Highlighting local New York hospital ties creates strong regional authority.</div>
       </div>
 
       <div class="player-card">
@@ -272,7 +270,7 @@ footer.doc-foot strong{color:var(--navy)}
         <h4>10. HospitalART Foundation</h4>
         <a href="https://www.hospitalart.org" target="_blank" class="p-url">hospitalart.org</a>
         <div class="p-desc">Donates paint-by-number artwork panels to healthcare facilities, allowing patients, families, and seniors to paint together.</div>
-        <div class="p-takeaway"><strong>Inspiration for Thanvi:</strong> Inspiring visual gallery layout for patient-created artwork.</div>
+        <div class="p-takeaway"><strong>Key Finding:</strong> Beautiful visual gallery layout for patient-created artwork.</div>
       </div>
 
       <div class="player-card">
@@ -280,7 +278,7 @@ footer.doc-foot strong{color:var(--navy)}
         <h4>11. Kids &amp; Art Foundation</h4>
         <a href="https://www.kidsandart.org" target="_blank" class="p-url">kidsandart.org</a>
         <div class="p-desc">Provides free art workshops and destination art kits to pediatric oncology patients and care centers.</div>
-        <div class="p-takeaway"><strong>Inspiration for Thanvi:</strong> Highlights doctor and pediatric nurse testimonials.</div>
+        <div class="p-takeaway"><strong>Key Finding:</strong> Physician and nurse testimonials validate program credibility.</div>
       </div>
 
       <div class="player-card">
@@ -288,102 +286,104 @@ footer.doc-foot strong{color:var(--navy)}
         <h4>12. Enchanted Makeovers</h4>
         <a href="https://www.enchantedmakeovers.org" target="_blank" class="p-url">enchantedmakeovers.org</a>
         <div class="p-desc">Distributes creative care kits, custom sketchbooks, and art supplies to pediatric centers and youth care facilities.</div>
-        <div class="p-takeaway"><strong>Inspiration for Thanvi:</strong> Great inspiration for packaging and presenting art kits to hospital staff.</div>
+        <div class="p-takeaway"><strong>Key Finding:</strong> Packaging assurances and non-toxic safety details reassure hospital staff.</div>
       </div>
 
     </div>
 
-    <!-- STRATEGIC COMPARISON -->
-    <h3>Thanvi's Unique Advantages</h3>
+    <h3>ArtRX's Competitive Edge</h3>
     <div class="t-wrap">
       <table>
         <thead>
           <tr>
-            <th>Key Feature</th>
-            <th>National Peers Standard</th>
-            <th>ArtRX's Unique Advantage</th>
+            <th>Key Dimension</th>
+            <th>Market Standard</th>
+            <th>ArtRX Advantage</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td><strong>Dual Mission</strong></td>
-            <td>Focuses only on children OR only on seniors.</td>
-            <td><strong>ArtRX Edge:</strong> ArtRX serves BOTH hospitalized kids AND senior nursing home residents, building an inspiring intergenerational movement.</td>
+            <td>Most organizations focus only on children or only on seniors.</td>
+            <td><strong>ArtRX Edge:</strong> ArtRX serves BOTH hospitalized children AND senior citizens in nursing homes, creating a unique intergenerational story.</td>
           </tr>
           <tr>
-            <td><strong>Academic Credentials</strong></td>
-            <td>Generic volunteer stories.</td>
-            <td><strong>ArtRX Edge:</strong> Thanvi's cancer research at Weill Cornell &amp; limb regeneration research at Harvard add elite academic credibility.</td>
+            <td><strong>Founder Credentials</strong></td>
+            <td>Generic volunteer bios.</td>
+            <td><strong>ArtRX Edge:</strong> Thanvi's cancer research at Weill Cornell &amp; limb regeneration research at Harvard elevate her profile to a future medical innovator.</td>
           </tr>
           <tr>
             <td><strong>Drawing Pads</strong></td>
-            <td>Blank paper or simple coloring books.</td>
-            <td><strong>ArtRX Edge:</strong> Custom guided drawing prompts (*"Draw Your Family"*, *"Favorite Food"*) that guide patients without pressure.</td>
+            <td>Blank paper or simple coloring sheets.</td>
+            <td><strong>ArtRX Edge:</strong> Custom guided drawing prompts (*"Draw Your Family"*, *"Favorite Food"*) that give patients gentle creative structure.</td>
           </tr>
         </tbody>
       </table>
     </div>
   </section>
 
-  <!-- USER JOURNEYS -->
+  <!-- SECTION 3: WHAT WILL WORK (PROPOSED SOLUTION) -->
   <section class="part">
-    <span class="sec-num">User Journeys</span>
-    <h2>A Seamless Experience for Every Visitor</h2>
+    <span class="sec-num">03 &middot; What Will Work</span>
+    <h2>Our Proposed Website Solution</h2>
+    <p>Based on our discovery call and market research, here is the exact proposed website structure, technical stack, and design blueprint we are building for ArtRX:</p>
 
-    <div class="journey-list">
-      <div class="journey-row">
-        <div class="j-label">HOSPITAL STAFF</div>
-        <div class="j-text"><strong>Child Life Specialist / Activity Director:</strong> Lands on Homepage &rarr; Clicks "Contact Us" &rarr; Selects "Hospital / Senior Facility Request" &rarr; Easily requests drawing pads. <strong>Result: New facility partnership!</strong></div>
+    <div class="bp-grid">
+      <div class="bp-card navy-top">
+        <h4>1. HOME (`/`)</h4>
+        <ul>
+          <li><strong>Hero Section:</strong> Bold headline + Dual CTAs ("Explore Gallery" &amp; "Volunteer With Us").</li>
+          <li><strong>Doctor Testimonial:</strong> Highlighted quote card from Dr. Venugopal (*Stars Surgical Suites*).</li>
+          <li><strong>Pillars of Care:</strong> Dual cards for Pediatric Hospital Care + Senior Care Workshops.</li>
+          <li><strong>Founder Spotlight:</strong> Thanvi's story &amp; Weill Cornell / Harvard research credentials.</li>
+        </ul>
       </div>
-      <div class="journey-row">
-        <div class="j-label">STUDENT PEERS</div>
-        <div class="j-text"><strong>High School Volunteer:</strong> Reads Thanvi's inspiring story &rarr; Selects "Volunteer Interest" form &rarr; Receives simple guide on helping or organizing local art drives. <strong>Result: New student ambassador!</strong></div>
+
+      <div class="bp-card">
+        <h4>2. GALLERY (`/gallery`)</h4>
+        <ul>
+          <li><strong>Segmented Tab Toggles:</strong> "Guided Templates" vs. "Patient Artwork".</li>
+          <li><strong>Guided Templates Tab:</strong> Displays Thanvi's custom drawing prompt pads (*"Draw Your Family"*, *"Favorite Food"*, *"You &amp; A Friend"*).</li>
+          <li><strong>Patient Artwork Tab:</strong> Displays real completed drawings created by children in hospitals and senior nursing home residents.</li>
+        </ul>
       </div>
-      <div class="journey-row">
-        <div class="j-label">COMMUNITY</div>
-        <div class="j-text"><strong>Local Supporter / Doctor:</strong> Explores Gallery &rarr; Sees Guided Templates + Real Patient Drawings &rarr; Reads Dr. Venugopal's testimonial. <strong>Result: Deep community trust!</strong></div>
+
+      <div class="bp-card">
+        <h4>3. GET INVOLVED (`/get-involved`)</h4>
+        <ul>
+          <li><strong>Student Ambassador Section:</strong> Information for high school peers wanting to volunteer.</li>
+          <li><strong>Future Chapter Toolkits:</strong> Downloadable PDF guides for starting ArtRX clubs in other high schools.</li>
+        </ul>
+      </div>
+
+      <div class="bp-card navy-top">
+        <h4>4. CONTACT (`/contact`)</h4>
+        <ul>
+          <li><strong>Inquiry Selector:</strong> Dropdown choice for General Inquiry, Volunteer Interest, or Hospital/Senior Facility Request.</li>
+          <li><strong>Direct Email Link:</strong> Connected to `artrx39@gmail.com`.</li>
+          <li><strong>Social Media Links:</strong> Footer links to official Instagram &amp; Facebook pages.</li>
+        </ul>
       </div>
     </div>
   </section>
 
-  <!-- PALETTE VISUAL -->
+  <!-- SECTION 4: NEXT STEPS & TIMELINE -->
   <section class="part">
-    <span class="sec-num">Design Tokens</span>
-    <h2>Thanvi's Approved Palette</h2>
-
-    <div class="palette">
-      <div class="chip">
-        <div class="color" style="background:#FAF6F0; border-bottom:1px solid #E2E8F0"></div>
-        <div class="label"><b>Soft Beige</b><span class="hex">#FAF6F0</span></div>
-      </div>
-      <div class="chip">
-        <div class="color" style="background:#2F7A5C"></div>
-        <div class="label"><b>Healing Sage Green</b><span class="hex">#2F7A5C</span></div>
-      </div>
-      <div class="chip">
-        <div class="color" style="background:#1A365D"></div>
-        <div class="label"><b>Healing Navy</b><span class="hex">#1A365D</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- DEVELOPMENT ROADMAP -->
-  <section class="part">
-    <span class="sec-num">Development Roadmap</span>
-    <h2>4-Phase Implementation Plan</h2>
+    <span class="sec-num">04 &middot; Next Steps &amp; Timeline</span>
+    <h2>Sequenced Execution Plan</h2>
 
     <div class="phase-list">
       <div class="phase-item">
         <div class="phase-head">
           <div class="ph-num">01</div>
-          <div class="ph-when">PHASE 1 &middot; BEFORE AUG 10</div>
-          <div class="ph-title">Custom Static Rebuild &amp; Domain Transition</div>
+          <div class="ph-when">IMMEDIATE &middot; BEFORE AUG 10</div>
+          <div class="ph-title">Static Prototype Launch &amp; Domain Transition</div>
         </div>
         <div class="phase-body">
           <ul>
-            <li>Deploy the responsive static prototype (`index.html`) inside the `ARTRX/` project folder.</li>
-            <li>Connect domain `artrx.co` on GoDaddy to free static hosting, eliminating monthly builder fees.</li>
-            <li>Update meta titles and descriptions to clearly reflect a non-profit youth charity.</li>
+            <li>Deploy the responsive static website prototype (`index.html`) inside the `ARTRX/` project workspace.</li>
+            <li>Connect domain `artrx.co` on GoDaddy to free static hosting, eliminating monthly website builder fees.</li>
+            <li>Correct browser titles and meta descriptions to reflect a non-profit youth charity.</li>
           </ul>
         </div>
       </div>
@@ -392,13 +392,13 @@ footer.doc-foot strong{color:var(--navy)}
         <div class="phase-head">
           <div class="ph-num">02</div>
           <div class="ph-when">PHASE 2 &middot; WEEK 1</div>
-          <div class="ph-title">High-Res Gallery Upload &amp; Social Media Links</div>
+          <div class="ph-title">High-Res Content Upload &amp; Social Links</div>
         </div>
         <div class="phase-body">
           <ul>
-            <li>Upload Thanvi's high-resolution photos of new drawing pads and patient artwork.</li>
-            <li>Connect official Instagram and Facebook social media handles in the footer.</li>
-            <li>Test the dual contact form intake logic.</li>
+            <li>Upload Thanvi's high-resolution photos of new drawing pads and patient artwork into the gallery.</li>
+            <li>Connect official Instagram and Facebook social media handles in the website footer.</li>
+            <li>Verify contact form submissions route directly to `artrx39@gmail.com`.</li>
           </ul>
         </div>
       </div>
@@ -406,28 +406,13 @@ footer.doc-foot strong{color:var(--navy)}
       <div class="phase-item">
         <div class="phase-head">
           <div class="ph-num">03</div>
-          <div class="ph-when">PHASE 3 &middot; WEEKS 2–3</div>
-          <div class="ph-title">Facility Portals &amp; Student Volunteer Guides</div>
+          <div class="ph-when">PHASE 3 &middot; MONTH 1</div>
+          <div class="ph-title">High School Chapter Expansion &amp; Hospital Growth</div>
         </div>
         <div class="phase-body">
           <ul>
-            <li>Add 1-page downloadable PDF flyers for high school students wanting to organize local drives.</li>
-            <li>Incorporate large font options for senior nursing home activity coordinators.</li>
-            <li>Highlight medical partner testimonials from attending physicians.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="phase-item">
-        <div class="phase-head">
-          <div class="ph-num">04</div>
-          <div class="ph-when">PHASE 4 &middot; MONTH 1</div>
-          <div class="ph-title">Regional Expansion &amp; Chapter Support</div>
-        </div>
-        <div class="phase-body">
-          <ul>
-            <li>Provide "Start an ArtRX Club" starter kits for student friends in other New York schools and states.</li>
-            <li>Integrate interactive hospital and senior care partner maps across New York.</li>
+            <li>Provide downloadable "Start an ArtRX Club" starter kits for student friends in other schools.</li>
+            <li>Build direct intake options for hospital Child Life specialists and nursing home activity directors.</li>
           </ul>
         </div>
       </div>
@@ -436,7 +421,7 @@ footer.doc-foot strong{color:var(--navy)}
 
   <!-- FOOTER -->
   <footer class="doc-foot">
-    <div><strong>ArtRX Heart-Centered Strategy Report</strong> &middot; Final Version</div>
+    <div><strong>ArtRX Digital Transformation Proposal</strong> &middot; C3A Labs</div>
     <div>Prepared by <strong>Satyam Singh Rajput (C3A Labs)</strong> for Thanvi Suvva &amp; Dr. Sushma Venugopal</div>
   </footer>
 
