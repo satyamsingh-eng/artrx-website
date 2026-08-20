@@ -2,13 +2,24 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>ArtRX — Bringing Comfort &amp; Creativity Through Art</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- AOS (Animate on Scroll) -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+<!-- Lucide Icons -->
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<!-- Canvas Confetti -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
 <style>
 :root {
   --navy: #1A365D;
+  --navy-light: #2A4365;
   --sage: #2F7A5C;
   --sage-light: #EBF7F2;
   --beige: #FAF6F0;
@@ -17,7 +28,7 @@
   --muted: #5A6272;
   --white: #FFFFFF;
   --card-shadow: 0 10px 30px rgba(26, 54, 93, 0.06);
-  --card-shadow-hover: 0 18px 40px rgba(26, 54, 93, 0.12);
+  --card-shadow-hover: 0 20px 40px rgba(26, 54, 93, 0.12);
   --font: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   --heading: 'Outfit', sans-serif;
 }
@@ -28,19 +39,21 @@ body {
   font-family: var(--font);
   background-color: var(--beige);
   color: var(--ink);
-  line-height: 1.6;
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
+  text-wrap: pretty;
 }
 
 /* NAVBAR */
 nav {
   position: sticky;
   top: 0;
-  background: rgba(250, 246, 240, 0.92);
+  background: rgba(250, 246, 240, 0.94);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(26, 54, 93, 0.08);
   z-index: 1000;
   padding: 18px 0;
+  transition: all 0.3s;
 }
 .nav-container {
   max-width: 1140px;
@@ -68,6 +81,10 @@ nav {
   font-family: var(--heading);
   font-weight: 800;
   font-size: 22px;
+  transition: transform 0.2s;
+}
+.brand:hover .brand-icon {
+  transform: rotate(-6deg) scale(1.05);
 }
 .brand-name {
   font-family: var(--heading);
@@ -99,7 +116,9 @@ nav {
   font-weight: 700;
   font-size: 14px;
   transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   border: none;
   cursor: pointer;
 }
@@ -118,7 +137,9 @@ nav {
   font-weight: 700;
   font-size: 14px;
   transition: all 0.2s;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 }
 .btn-secondary:hover {
   background: var(--navy);
@@ -273,7 +294,7 @@ section { padding: 88px 24px; }
   transition: transform 0.3s, box-shadow 0.3s;
 }
 .pillar-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-6px);
   box-shadow: var(--card-shadow-hover);
 }
 .pillar-icon {
@@ -318,7 +339,10 @@ section { padding: 88px 24px; }
   font-weight: 700;
   font-size: 14px;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 }
 .tab-btn.active, .tab-btn:hover {
   background: var(--navy);
@@ -329,13 +353,14 @@ section { padding: 88px 24px; }
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
+  transition: all 0.3s ease;
 }
 .gallery-item {
   background: var(--beige);
   border-radius: 20px;
   overflow: hidden;
   border: 1px solid rgba(26, 54, 93, 0.06);
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s;
   cursor: pointer;
 }
 .gallery-item:hover {
@@ -347,6 +372,10 @@ section { padding: 88px 24px; }
   height: 240px;
   object-fit: cover;
   background: #e2e8f0;
+  transition: transform 0.4s ease;
+}
+.gallery-item:hover .gallery-img {
+  transform: scale(1.03);
 }
 .gallery-info {
   padding: 20px;
@@ -374,6 +403,12 @@ section { padding: 88px 24px; }
   align-items: center;
   justify-content: center;
   padding: 24px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.modal.open {
+  display: flex;
+  opacity: 1;
 }
 .modal-content {
   background: var(--white);
@@ -383,6 +418,11 @@ section { padding: 88px 24px; }
   overflow: hidden;
   position: relative;
   box-shadow: 0 24px 60px rgba(0,0,0,0.3);
+  transform: scale(0.95);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.modal.open .modal-content {
+  transform: scale(1);
 }
 .modal-img {
   width: 100%;
@@ -409,13 +449,17 @@ section { padding: 88px 24px; }
   top: 16px; right: 20px;
   background: rgba(255,255,255,0.9);
   border: none;
-  width: 36px; height: 36px;
+  width: 38px; height: 38px;
   border-radius: 50%;
   font-size: 20px;
   font-weight: 800;
   color: var(--navy);
   cursor: pointer;
   display: flex; align-items: center; justify-content: center;
+  transition: background 0.2s;
+}
+.close-btn:hover {
+  background: var(--white);
 }
 
 /* ABOUT FOUNDER */
@@ -485,18 +529,34 @@ section { padding: 88px 24px; }
   width: 100%;
   padding: 14px 18px;
   border-radius: 12px;
-  border: 1px solid rgba(26, 54, 93, 0.15);
+  border: 1.5px solid rgba(26, 54, 93, 0.15);
   background: var(--white);
   font-family: var(--font);
   font-size: 15px;
   color: var(--ink);
   outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
 .form-control:focus, .form-select:focus {
   border-color: var(--sage);
-  box-shadow: 0 0 0 3px rgba(47, 122, 92, 0.15);
+  box-shadow: 0 0 0 4px rgba(47, 122, 92, 0.15);
 }
 textarea.form-control { resize: vertical; height: 120px; }
+
+/* TOAST MESSAGE */
+.toast-msg {
+  display: none;
+  background: var(--sage-light);
+  border: 1.5px solid var(--sage);
+  color: var(--sage);
+  padding: 16px 20px;
+  border-radius: 14px;
+  margin-top: 20px;
+  font-weight: 600;
+  font-size: 15px;
+  align-items: center;
+  gap: 10px;
+}
 
 /* FOOTER */
 footer {
@@ -546,22 +606,22 @@ footer {
       <li><a href="#gallery">Gallery</a></li>
       <li><a href="#contact">Get Involved</a></li>
     </ul>
-    <a href="#contact" class="btn-primary">Contact Us</a>
+    <a href="#contact" class="btn-primary"><i data-lucide="mail" style="width: 16px; height: 16px;"></i> Contact Us</a>
   </div>
 </nav>
 
 <!-- HERO -->
-<header class="hero">
+<header class="hero" data-aos="fade-up" data-aos-duration="700">
   <div>
-    <span class="badge">✦ Healing Through Creativity</span>
+    <span class="badge"><i data-lucide="sparkles" style="width: 14px; height: 14px;"></i> Healing Through Creativity</span>
     <h1>Comfort &amp; Joy Through the Power of Drawing</h1>
     <p>ArtRX provides illustration prompt pads and creative workshops to hospitalized children and senior citizens in nursing homes throughout New York.</p>
     <div class="hero-btns">
-      <a href="#gallery" class="btn-primary">Explore Gallery</a>
-      <a href="#contact" class="btn-secondary">Volunteer With Us</a>
+      <a href="#gallery" class="btn-primary"><i data-lucide="palette" style="width: 16px; height: 16px;"></i> Explore Gallery</a>
+      <a href="#contact" class="btn-secondary"><i data-lucide="heart-handshake" style="width: 16px; height: 16px;"></i> Volunteer With Us</a>
     </div>
   </div>
-  <div class="hero-card">
+  <div class="hero-card" data-aos="fade-left" data-aos-duration="700">
     <p class="hero-card-quote">"ArtRX brings an innovative and compassionate approach to mental health support. Their workshops help patients reduce anxiety and express emotions through creative drawing."</p>
     <div class="hero-card-author">
       <div class="author-avatar">DV</div>
@@ -574,7 +634,7 @@ footer {
 </header>
 
 <!-- IMPACT COUNTER BAR -->
-<div class="impact-bar">
+<div class="impact-bar" data-aos="fade-up" data-aos-duration="600">
   <div class="impact-grid">
     <div class="impact-item">
       <h3>1,000+</h3>
@@ -594,18 +654,18 @@ footer {
 <!-- PILLARS -->
 <section id="pillars">
   <div class="container">
-    <div class="section-header">
+    <div class="section-header" data-aos="fade-up" data-aos-duration="600">
       <h2>How Drawing Brings Comfort</h2>
       <p>You don't need to be a great artist to feel the healing impact of art. When words fail during tough times, drawing gives everyone a voice.</p>
     </div>
     <div class="pillars-grid">
-      <div class="pillar-card">
-        <div class="pillar-icon">🧸</div>
+      <div class="pillar-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="pillar-icon"><i data-lucide="smile" style="width: 32px; height: 32px; color: var(--navy);"></i></div>
         <h3>Pediatric Hospital Care</h3>
         <p>Providing guided illustration pads to children facing medical stays, giving them a fun distraction, a safe outlet for emotions, and a small moment of happiness.</p>
       </div>
-      <div class="pillar-card">
-        <div class="pillar-icon">🎨</div>
+      <div class="pillar-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="pillar-icon"><i data-lucide="palette" style="width: 32px; height: 32px; color: var(--navy);"></i></div>
         <h3>Senior Care Workshops</h3>
         <p>Conducting interactive, relaxing art sessions for senior citizens in nursing homes to promote relaxation, combat loneliness, and stimulate memory through creation.</p>
       </div>
@@ -616,16 +676,16 @@ footer {
 <!-- GALLERY WITH SEGMENT TABS & LIGHTBOX -->
 <section id="gallery" class="gallery-bg">
   <div class="container">
-    <div class="section-header">
+    <div class="section-header" data-aos="fade-up" data-aos-duration="600">
       <h2>ArtRX Gallery</h2>
       <p>Explore our guided illustration prompt pads and the inspiring original drawings created by pediatric patients and senior residents.</p>
     </div>
 
     <!-- SEGMENTATION TABS -->
-    <div class="tabs-container">
-      <button class="tab-btn active" onclick="filterGallery('all', event)">All Works</button>
-      <button class="tab-btn" onclick="filterGallery('template', event)">Guided Templates</button>
-      <button class="tab-btn" onclick="filterGallery('artwork', event)">Patient Artwork</button>
+    <div class="tabs-container" data-aos="fade-up" data-aos-duration="500">
+      <button class="tab-btn active" onclick="filterGallery('all', event)"><i data-lucide="grid" style="width: 15px; height: 15px;"></i> All Works</button>
+      <button class="tab-btn" onclick="filterGallery('template', event)"><i data-lucide="book-open" style="width: 15px; height: 15px;"></i> Guided Templates</button>
+      <button class="tab-btn" onclick="filterGallery('artwork', event)"><i data-lucide="image" style="width: 15px; height: 15px;"></i> Patient Artwork</button>
     </div>
 
     <div class="gallery-grid" id="gallery-grid">
@@ -700,12 +760,12 @@ footer {
 <section id="about">
   <div class="container">
     <div class="about-grid">
-      <div class="about-card">
+      <div class="about-card" data-aos="fade-right" data-aos-duration="600">
         <h3>Thanvi Suvva</h3>
         <p style="color: var(--sage); font-weight: 700; margin-bottom: 16px;">Founder &amp; Youth Director</p>
         <p style="font-size: 15px; color: var(--muted);">Jericho High School Junior passionate about the intersection of scientific research, medicine, and therapeutic art.</p>
       </div>
-      <div class="about-content">
+      <div class="about-content" data-aos="fade-left" data-aos-duration="600">
         <h2>About the Founder</h2>
         <p>Thanvi Suvva founded ArtRX to give hospitalized children and nursing home residents a creative voice when words fail during difficult medical circumstances.</p>
         <p>Combining her deep dedication to community service with medical research, Thanvi leads outreach across hospitals and senior care facilities throughout New York.</p>
@@ -723,11 +783,11 @@ footer {
 <!-- CONTACT FORM -->
 <section id="contact" class="contact-bg">
   <div class="container">
-    <div class="section-header">
+    <div class="section-header" data-aos="fade-up" data-aos-duration="600">
       <h2>Connect with ArtRX</h2>
       <p>Whether you'd like to ask a general question or volunteer to help bring art kits to hospitals, we'd love to hear from you!</p>
     </div>
-    <div class="contact-box">
+    <div class="contact-box" data-aos="fade-up" data-aos-delay="100">
       <form onsubmit="handleContactSubmit(event)">
         <div class="form-group">
           <label>Inquiry Type</label>
@@ -749,8 +809,12 @@ footer {
           <label>Message</label>
           <textarea class="form-control" placeholder="Tell us how we can help or join..." required></textarea>
         </div>
-        <button type="submit" class="btn-primary" style="width: 100%; font-size: 16px; padding: 14px;">Send Message</button>
+        <button type="submit" class="btn-primary" style="width: 100%; font-size: 16px; padding: 14px; justify-content: center;"><i data-lucide="send" style="width: 18px; height: 18px;"></i> Send Message</button>
       </form>
+      <div id="toastSuccess" class="toast-msg">
+        <i data-lucide="check-circle" style="width: 20px; height: 20px;"></i>
+        <span>Thank you for reaching out to ArtRX! We will connect with you shortly.</span>
+      </div>
     </div>
   </div>
 </section>
@@ -766,13 +830,23 @@ footer {
   </div>
 </footer>
 
+<!-- AOS Init -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
+AOS.init({
+  once: true,
+  duration: 600,
+  easing: 'ease-out-cubic'
+});
+
+lucide.createIcons();
+
 function filterGallery(category, evt) {
   const items = document.querySelectorAll('.gallery-item');
   const buttons = document.querySelectorAll('.tab-btn');
   
   buttons.forEach(btn => btn.classList.remove('active'));
-  if(evt) evt.target.classList.add('active');
+  if(evt) evt.currentTarget.classList.add('active');
 
   items.forEach(item => {
     if (category === 'all' || item.classList.contains(category)) {
@@ -787,16 +861,32 @@ function openLightbox(imgSrc, title, desc) {
   document.getElementById('modalImg').src = imgSrc;
   document.getElementById('modalTitle').innerText = title;
   document.getElementById('modalDesc').innerText = desc;
-  document.getElementById('lightboxModal').style.display = 'flex';
+  const modal = document.getElementById('lightboxModal');
+  modal.classList.add('open');
 }
 
 function closeLightbox() {
-  document.getElementById('lightboxModal').style.display = 'none';
+  const modal = document.getElementById('lightboxModal');
+  modal.classList.remove('open');
 }
 
 function handleContactSubmit(e) {
   e.preventDefault();
-  alert('Thank you for reaching out to ArtRX! We will get back to you shortly.');
+  
+  // Confetti celebration burst
+  if (typeof confetti === 'function') {
+    confetti({
+      particleCount: 70,
+      spread: 60,
+      origin: { y: 0.7 },
+      colors: ['#2F7A5C', '#1A365D', '#93C5FD', '#FAF6F0']
+    });
+  }
+
+  const toast = document.getElementById('toastSuccess');
+  toast.style.display = 'flex';
+  lucide.createIcons();
+  e.target.reset();
 }
 
 window.onclick = function(event) {
